@@ -1,0 +1,10 @@
+- debug: 
+    msg: "Min volume free space in GB: {{ volume.minSize }}"
+- debug:
+    msg: "Min free space in bytes: {{ (volume.minSize * 1073741824)}}"
+- name: Assert root partition is expanded
+  assert: 
+    that: item.mount != '/' or (item.mount == '/' and item.size_available > "{{ (volume.minSize * 10737418240) }}")  
+  with_items: '{{ ansible_mounts }}'
+  ignore_errors: yes
+  register: expanded

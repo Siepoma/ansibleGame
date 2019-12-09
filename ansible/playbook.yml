@@ -1,0 +1,7 @@
+- name: configure Swarm Server
+  hosts: d_swarm
+  vars_files:
+    - './vars/main.yml'
+  tasks:
+    - name: check size
+      include: './task/main.yml'
