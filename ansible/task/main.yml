@@ -12,3 +12,6 @@
 - name: Expand partition
   include: 'resize.yml'
   when: expand is failed
+
+- name: Configure Docker
+  include: 'dockerConfig.yml'
