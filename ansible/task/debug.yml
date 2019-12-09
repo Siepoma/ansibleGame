@@ -1,0 +1,11 @@
+- debug:
+   msg: test1
+
+- name: task1
+  command: ls
+
+- debug:
+   msg: test2
+
+- name: task2
+  command: echo 'ok'

@@ -1,2 +1,7 @@
 volume:
   minSize: 6
+
+dev: /dev/sda
+vg_name: centos
+lv_name: root
+
